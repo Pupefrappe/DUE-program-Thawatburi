@@ -541,11 +541,7 @@ main { max-width: 820px; margin: 0 auto; padding: 24px 20px 60px; }
 }
 </style>
 
-<!-- Setup banner -->
-<div id="setup-banner" hidden>
-  <p>⚠️ ยังไม่ได้ตั้งค่า Google Apps Script URL — ข้อมูลจะไม่ถูกบันทึกลง Google Sheet</p>
-  <button onclick="openModal()">ตั้งค่า GAS URL</button>
-</div>
+<!-- Setup banner: URL ฝังตายตัวแล้ว ไม่แสดง -->
 
 <!-- Header -->
 <header>
@@ -556,7 +552,7 @@ main { max-width: 820px; margin: 0 auto; padding: 24px 20px 60px; }
       <div class="hdr-sub">Drug Use Evaluation — Antibiotic Order Sheet</div>
     </div>
     <div class="hdr-gap"></div>
-    <button class="hdr-settings" onclick="openModal()" title="ตั้งค่า GAS URL">⚙</button>
+    <!-- ⚙ ซ่อน: URL ฝังตายตัวแล้ว -->
   </div>
   <!-- Tab bar inside header box -->
   <div class="tab-bar">
@@ -1004,9 +1000,8 @@ main { max-width: 820px; margin: 0 auto; padding: 24px 20px 60px; }
 
 <script>
 // ─── State ────────────────────────────────────────────────
-const DEFAULT_GAS_URL = 'https://script.google.com/macros/s/AKfycby4UwXVO3irtzA_MsobDmBjgteNHJzR2Qp_pv9dQU1oWMnyaRXAKP-VQLfj4U4flWFD/exec';
-let GAS_URL = '';
-try { GAS_URL = localStorage.getItem('due_gas_url') || DEFAULT_GAS_URL; } catch(_) { GAS_URL = DEFAULT_GAS_URL; }
+// URL ฝังตายตัว — ไม่ต้องตั้งค่า
+const GAS_URL = 'https://script.google.com/macros/s/AKfycby4UwXVO3irtzA_MsobDmBjgteNHJzR2Qp_pv9dQU1oWMnyaRXAKP-VQLfj4U4flWFD/exec';
 let currentRecord = null;
 
 // ─── Init ─────────────────────────────────────────────────
